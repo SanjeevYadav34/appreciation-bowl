@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bowl of Appreciations 💝</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #f9a1bc, #fbc2eb);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: white;
+      font-size: 40px;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 5px #d81b60;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 22px;
+      border: none;
+      border-radius: 30px;
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      animation: bounce 2s infinite;
+    }
+
+    button:hover {
+      background-color: #e91e63;
+      transform: scale(1.05);
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    #message {
+      margin-top: 40px;
+      font-size: 26px;
+      color: #880e4f;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      max-width: 80%;
+      line-height: 1.5;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    #message.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bowl of Appreciations 💝</h1>
+  <button onclick="showAppreciation()">Show Appreciation</button>
+  <div id="message"></div>
+
+  <script>
+    const messages = [
+      "You light up every room you enter ✨",
+      "Your kindness is contagious 💕",
+      "You're an amazing sister and friend 👯‍♀️",
+      "You make the world a better place 🌍",
+      "Your creativity is inspiring 🎨",
+      "I'm so lucky to have you in my life 🍀",
+      "You're stronger than you think 💪",
+      "You are enough, just as you are 🌟",
+      "Your laughter is pure joy 😄",
+      "You handle everything with grace 🌸"
+    ];
+
+    function showAppreciation() {
+      const messageEl = document.getElementById('message');
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      messageEl.classList.remove('show');
+      setTimeout(() => {
+        messageEl.innerText = messages[randomIndex];
+        messageEl.classList.add('show');
+      }, 200); // little delay to reset animation
+    }
+  </script>
+
+</body>
+</html>
