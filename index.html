@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bowl of Appreciations 💝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💓Web of Compliments💓</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
   <style>
     body {
@@ -10,30 +11,45 @@
       background: linear-gradient(135deg, #f9a1bc, #fbc2eb);
       height: 100vh;
       margin: 0;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       overflow: hidden;
+      text-align: center;
+    }
+
+    .birthday-message {
+      font-family: 'Pacifico', cursive;
+      font-size: 6.5vw;
+      color: #fff;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px #c2185b;
+      animation: fadeIn 2s ease-in-out;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     h1 {
       font-family: 'Pacifico', cursive;
       color: white;
-      font-size: 40px;
+      font-size: 7vw;
       margin-bottom: 40px;
       text-shadow: 2px 2px 5px #d81b60;
     }
 
     button {
-      padding: 15px 30px;
-      font-size: 22px;
+      padding: 18px 40px;
+      font-size: 6vw;
       border: none;
-      border-radius: 30px;
+      border-radius: 50px;
       background-color: #ff69b4;
       color: white;
       cursor: pointer;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
       transition: transform 0.2s ease, background-color 0.3s ease;
       animation: bounce 2s infinite;
     }
@@ -53,43 +69,43 @@
     }
 
     #message {
-      margin-top: 40px;
-      font-size: 26px;
+      margin-top: 50px;
+      font-size: 5.5vw;
       color: #880e4f;
       text-align: center;
       opacity: 0;
       transition: opacity 0.8s ease;
-      max-width: 80%;
-      line-height: 1.5;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.6);
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 90%;
+      line-height: 1.6;
+      padding: 30px 20px;
+      background-color: rgba(255, 255, 255, 0.75);
+      border-radius: 25px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     }
 
     #message.show {
       opacity: 1;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
 
-  <h1>Bowl of Appreciations 💝</h1>
-  <button onclick="showAppreciation()">Show Appreciation</button>
+  <div class="birthday-message">🎉 Happy Birthday Prangya 🎉</div>
+  <h1>💓Web of Compliments💓</h1>
+  <button onclick="showAppreciation()">Show Compliment</button>
   <div id="message"></div>
 
   <script>
     const messages = [
-      "You light up every room you enter ✨",
-      "Your kindness is contagious 💕",
-      "You're an amazing sister and friend 👯‍♀️",
-      "You make the world a better place 🌍",
-      "Your creativity is inspiring 🎨",
-      "I'm so lucky to have you in my life 🍀",
-      "You're stronger than you think 💪",
-      "You are enough, just as you are 🌟",
-      "Your laughter is pure joy 😄",
-      "You handle everything with grace 🌸"
+      "You are like a big sister to me which i never had but always wanted 🥲",
+      "Prangya you are a true blessing in our life🌷",
+      "Our life feels lighter when you are with us😇",
+      "Compliment chhodo prangya meri shadi ke liye ek ladki dhundo na -Komal Nalawade👸"
     ];
 
     function showAppreciation() {
@@ -99,7 +115,7 @@
       setTimeout(() => {
         messageEl.innerText = messages[randomIndex];
         messageEl.classList.add('show');
-      }, 200); // little delay to reset animation
+      }, 200);
     }
   </script>
 
