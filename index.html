@@ -60,12 +60,8 @@
     }
 
     @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     #message {
@@ -74,17 +70,29 @@
       color: #880e4f;
       text-align: center;
       opacity: 0;
-      transition: opacity 0.8s ease;
+      transform: scale(0);
       max-width: 90%;
       line-height: 1.6;
       padding: 30px 20px;
-      background-color: rgba(255, 255, 255, 0.75);
+      background-color: rgba(255, 255, 255, 0.85);
       border-radius: 25px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      animation-fill-mode: forwards;
     }
 
     #message.show {
-      opacity: 1;
+      animation: tiltPaper 2s ease forwards;
+    }
+
+    @keyframes tiltPaper {
+      0% {
+        transform: scale(0) rotateX(90deg) rotateY(90deg);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1) rotateX(0deg) rotateY(0deg);
+        opacity: 1;
+      }
     }
 
     @keyframes fadeIn {
@@ -102,7 +110,7 @@
 
   <script>
     const messages = [
-      "You are like a big sister to me which i never had but always wanted 🥲",
+      "You are like a big sister to me which I never had but always wanted 🥲",
       "Prangya you are a true blessing in our life🌷",
       "Our life feels lighter when you are with us😇",
       "Compliment chhodo prangya meri shadi ke liye ek ladki dhundo na -Komal Nalawade👸"
@@ -115,7 +123,7 @@
       setTimeout(() => {
         messageEl.innerText = messages[randomIndex];
         messageEl.classList.add('show');
-      }, 200);
+      }, 100);
     }
   </script>
 
